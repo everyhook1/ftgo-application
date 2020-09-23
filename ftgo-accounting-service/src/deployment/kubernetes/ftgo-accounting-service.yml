@@ -9,7 +9,7 @@ spec:
   selector:
     svc: ftgo-accounting-service
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: ftgo-accounting-service
@@ -66,4 +66,8 @@ spec:
             port: 8080
           initialDelaySeconds: 60
           periodSeconds: 20
+  selector:
+    matchLabels:
+      svc: ftgo-accounting-service
+      application: ftgo
 ---

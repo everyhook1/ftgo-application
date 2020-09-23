@@ -9,7 +9,7 @@ spec:
   selector:
     svc: ftgo-cdc-service
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: ftgo-cdc-service
@@ -118,4 +118,7 @@ spec:
             port: 8080
           initialDelaySeconds: 60
           periodSeconds: 20
+  selector:
+    matchLabels:
+      svc: ftgo-cdc-service
 ---

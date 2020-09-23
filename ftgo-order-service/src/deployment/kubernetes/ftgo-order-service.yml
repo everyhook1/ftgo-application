@@ -17,7 +17,7 @@ spec:
   selector:
     svc: ftgo-order-service
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: ftgo-order-service
@@ -74,4 +74,8 @@ spec:
             port: 8080
           initialDelaySeconds: 60
           periodSeconds: 20
+  selector:
+    matchLabels:
+      svc: ftgo-order-service
+      application: ftgo
 ---
